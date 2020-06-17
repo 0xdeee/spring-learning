@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Signup</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Login</h1>
+      <form th:action="@{/signup}"
+         th:object="${accountForm}" method="POST">
+         <table>
+         <tr>
+         <td>User name</td>
+         <td><input type="text" th:field="*{username}" /></td>    
+       	 </tr>
+       	 <tr>	
+         <td>Name</td>
+         <td><input type="text" th:field="*{name}" /></td>     
+         </tr>
+         <tr>
+         <td>Password</td>
+         <td><input type="password" th:field="*{password}" /></td>    
+         </tr>
+         <tr>
+         <td>Account No</td>
+         <td><input type="text" th:field="*{accountNo}" /></td>     
+         </tr>
+         <tr>
+         <td>Balance</td>
+         <td><input type="text" th:field="*{balance}" /></td>    
+         </tr>
+         </table>
+         <input type="submit" value="Signup" />
+      </form>
+       
+      <br/>
+       
+      <!-- Check if errorMessage is not null and not empty -->
+       
+      <div th:if="${signupError}" th:utext="${signupError}"
+         style="color:red;font-style:italic;">
+         ...
+      </div>
+       
+   </body>
+</html>

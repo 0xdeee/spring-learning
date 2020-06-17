@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>HOME</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Hi..</h1><h2 th:utext="${name}">...</h2> <br/>
+<h3>your account balance is </h3><h2 th:utext="${balance}">...</h2> <br/> <br/>
+<a th:href="@{/}">back to home...</a> <br/>
+</body>
+</html>
