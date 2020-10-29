@@ -3,8 +3,12 @@ package com.learning.spring.basics.springbasics;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.learning.spring.basics.springbasics.basics.tutorial.BinarySearchImpl;
 
 @SpringBootApplication
+@ComponentScan("com.learning.spring.basics.springbasics.basics.tutorial")
 public class SpringBasicsApplication {
 
     // for spring to manage depenedencies we need to tell spring the following
@@ -34,9 +38,14 @@ public class SpringBasicsApplication {
 	// using the instance of ApplicationContext and accessing the getBean() to get
 	// the bean/obj of the class we need
 	BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
-	// QuickSortAlgorithm qs =
-	// applicationContext.getBean(QuickSortAlgorithm.class);
-	//		System.out.println(qs);
+	BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+
+	// demonstrating singleton bean & prototype bean creation
+	System.out.println(binarySearch);
+	System.out.println(binarySearch1);
+
+	// QuickSortAlgorithm qs = applicationContext.getBean(QuickSortAlgorithm.class);
+	// System.out.println(qs);
 	// here since "new" keyword is not used this appln is completely loosely
 	// coupled.
 	int result = binarySearch.binarySearch(new int[]{12, 4, 2, 5, 10}, 5);

@@ -1,4 +1,4 @@
-package com.learning.spring.basics.springbasics;
+package com.learning.spring.basics.springbasics.basics.tutorial;
 
 import org.springframework.stereotype.Component;
 
